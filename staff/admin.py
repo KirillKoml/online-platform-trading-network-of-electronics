@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from staff.models import Employee
+
+
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    """Админка для сотрудников."""
+    list_display = ('id', 'email')
